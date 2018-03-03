@@ -1,0 +1,128 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "myr@mail.ru",
+      "pass": "123456",
+      "name": "Admin"
+    }
+  ],
+  "bill": {
+    "value": 400,
+    "currency": "RUB"
+  },
+  "products": [
+    {
+      "barcode": "123",
+      "name": "Nivea dezadarant",
+      "price": 3,
+      "id": 1
+    },
+    {
+      "barcode": "456",
+      "name": "Nivea 2",
+      "price": 4,
+      "id": 2
+    },
+    {
+      "barcode": "789",
+      "name": "Nivea 1",
+      "price": 5,
+      "id": 3
+    }
+  ],
+  "categories": [
+    {
+      "name": "Əhməd",
+      "capacity": 130,
+      "id": 1
+    },
+    {
+      "name": "Xəyal",
+      "capacity": 130,
+      "id": 2
+    },
+    {
+      "name": "Mustafa",
+      "capacity": 130,
+      "id": 3
+    },
+    {
+      "name": "Qafur",
+      "capacity": 130,
+      "id": 4
+    },
+    {
+      "name": "Orxan",
+      "capacity": 130,
+      "id": 5
+    },
+    {
+      "name": "Vuqar",
+      "capacity": 130,
+      "id": 6
+    },
+    {
+      "name": "Rüfət",
+      "capacity": 130,
+      "id": 7
+    },
+    {
+      "name": "Ceyhun icra",
+      "capacity": 100,
+      "id": 8
+    },
+    {
+      "name": "Kamran",
+      "capacity": 30,
+      "id": 9
+    },
+    {
+      "name": "Samsung A320",
+      "capacity": 530,
+      "id": 10
+    }
+  ],
+  "events": [
+    {
+      "type": "outcome",
+      "amount": 100,
+      "category": 8,
+      "date": "26.12.2017 22:44:54",
+      "description": "Ceyhun icra Yanvar ayının pulunu tam ödədi",
+      "id": 1
+    },
+    {
+      "type": "outcome",
+      "amount": 130,
+      "category": 6,
+      "date": "05.01.2018 14:28:12",
+      "description": "Vuqar Xəyal Yanvar ayının pulunu tam ödədi",
+      "id": 2
+    },
+    {
+      "type": "outcome",
+      "amount": 90,
+      "category": 7,
+      "date": "06.01.2018 22:28:50",
+      "description": "Rüfət Yanvar ayının pulunu tam ödəmədi",
+      "id": 3
+    },
+    {
+      "type": "outcome",
+      "amount": 40,
+      "category": 7,
+      "date": "10.01.2018 21:46:07",
+      "description": "Rüfət Yanvar ayının pulunu tam ödədi",
+      "id": 4
+    },
+    {
+      "type": "outcome",
+      "amount": 150,
+      "category": 10,
+      "date": "02.02.2018 23:42:50",
+      "description": "Kamran mantyor ödədi",
+      "id": 5
+    }
+  ]
+}

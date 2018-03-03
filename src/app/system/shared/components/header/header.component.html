@@ -1,0 +1,24 @@
+<header class="header">
+  <div class="header-block header-block-search">
+    {{ date | date:'dd.MM.yyyy' }}
+  </div>
+  <div class="header-block header-block-nav">
+    <ul class="nav-profile">
+      <li class="profile dropdown" myrDropdown>
+        <a class="nav-link dropdown-toggle" role="button">
+          <span class="name">
+              Xoş Gəldiniz, {{user.name}}
+          </span>
+        </a>
+        <div class="dropdown-menu profile-dropdown-menu">
+          <a class="dropdown-item" [routerLink]="['/system', 'bill']"> <i class="fa fa-money"></i> Hesabım </a>
+          <a class="dropdown-item" [routerLink]="['/system', 'history']"> <i class="fa fa-history"></i> Görülən işlər </a>
+          <a class="dropdown-item" [routerLink]="['/system', 'planning']"> <i class="fa fa-briefcase"></i> Məxariclər </a>
+          <a class="dropdown-item" [routerLink]="['/system', 'records']"> <i class="fa fa-plus"></i> Yeni əməliyyat </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" (click)="onLogout()"> <i class="fa fa-power-off icon"></i> Çıxış </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</header>

@@ -1,0 +1,68 @@
+<p class="text-xs-center">Sistemə daxil olun</p>
+<div
+  @fade
+  class="alert alert-{{message.type}}"
+  *ngIf="message.text"
+>
+  {{message.text}}
+</div>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div
+    class="form-group"
+    [ngClass]="{'has-error': form.get('email').invalid && form.get('email').touched}"
+  >
+    <input
+      type="text"
+      class="form-control underlined"
+      id="email"
+      placeholder="Email"
+      formControlName="email"
+    >
+    <span
+      class="form-help-text"
+      *ngIf="form.get('email').invalid && form.get('email').touched"
+    >
+      <span *ngIf="form.get('email')['errors']['required']">Email yazılmayıb. </span>
+      <span *ngIf="form.get('email')['errors']['email']">Email düzgün formatda deyil. </span>
+    </span>
+  </div>
+  <div
+    class="form-group"
+    [ngClass]="{'has-error': form.get('pass').invalid && form.get('pass').touched}"
+  >
+    <input
+      type="password"
+      class="form-control underlined"
+      id="pass"
+      placeholder="Şifrə"
+      formControlName="pass"
+    >
+    <span
+      class="form-help-text"
+      *ngIf="form.get('pass').invalid && form.get('pass').touched"
+    >
+      <span *ngIf="form.get('pass')['errors']['required']">Şifrə yazılmayıb. </span>
+      <span *ngIf="form.get('pass')['errors']['minlength'] && form.get('pass')['errors']['minlength']['requiredLength']">
+        Şifrə minimum
+        {{ form.get('pass')['errors']['minlength']['requiredLength'] }}
+        sinvol olmalıdır.
+        Hazırda {{ form.get('pass')['errors']['minlength']['actualLength'] }} sinvoldur.
+      </span>
+    </span>
+  </div>
+  <div class="form-group">
+    <button
+      type="submit"
+      class="btn btn-block btn-primary"
+      [disabled]="form.invalid"
+    >
+      İrəli
+    </button>
+  </div>
+  <div class="form-group">
+    <p class="text-muted text-xs-center">
+      Hələ üzv deyilsiniz? <a [routerLink]="'/registration'">Dərhal üzv olun!</a>
+    </p>
+  </div>
+</form>

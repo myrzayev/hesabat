@@ -1,0 +1,31 @@
+<div class="title-block">
+  <h3 class="title pull-left">
+    Görülən işlər <span class="sparkline bar"></span>
+  </h3>
+  <div class="pull-right">
+    <button class="btn-sm btn btn-primary-outline" (click)="openFilter()">
+      <i class="fa fa-filter"></i>
+    </button>
+  </div>
+</div>
+
+<div *ngIf="!isLoaded" class="text-center">
+  <myr-loader></myr-loader>
+</div>
+
+<div *ngIf="isLoaded">
+  <myr-history-chart [data]="chartData"></myr-history-chart>
+
+  <myr-history-events
+    [categories]="categories"
+    [events]="filteredEvents"
+  >
+  </myr-history-events>
+  <div *ngIf="isFilterVisible">
+    <myr-history-filter
+      (onFilterApply)="onFilterApply($event)"
+      (onFilterCancel)="onFilterCancel()"
+      [categories]="categories"
+    ></myr-history-filter>
+  </div>
+</div>

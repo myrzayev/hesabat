@@ -1,0 +1,99 @@
+<p class="text-xs-center">Dərhal üzv olun</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div
+    class="form-group"
+    [ngClass]="{'has-error': form.get('email').invalid && form.get('email').touched}"
+  >
+    <label for="email">Email</label>
+    <input
+      type="text"
+      class="form-control underlined"
+      id="email"
+      placeholder="Email"
+      formControlName="email"
+    >
+    <span
+      class="form-help-text"
+      *ngIf="form.get('email').invalid && form.get('email').touched"
+    >
+      <span *ngIf="form.get('email')['errors']['required']">Email yazılmayıb. </span>
+      <span *ngIf="form.get('email')['errors']['email']">Email düzgün formatda deyil. </span>
+      <span *ngIf="form.get('email')['errors']['forbiddenEmail']">Email artıq istifadə olunur. </span>
+    </span>
+  </div>
+  <div
+    class="form-group"
+    [ngClass]="{'has-error': form.get('pass').invalid && form.get('pass').touched}"
+  >
+    <label for="pass">Şifrə</label>
+    <input
+      type="password"
+      class="form-control underlined"
+      id="pass"
+      placeholder="Şifrə"
+      formControlName="pass"
+    >
+    <span
+      class="form-help-text"
+      *ngIf="form.get('pass').invalid && form.get('pass').touched"
+    >
+      <span *ngIf="form.get('pass')['errors']['required']">Şifrə yazılmayıb. </span>
+      <span *ngIf="form.get('pass')['errors']['minlength'] && form.get('pass')['errors']['minlength']['requiredLength']">
+        Şifrə minimum
+        {{ form.get('pass')['errors']['minlength']['requiredLength'] }}
+        sinvol olmalıdır.
+        Hazırda {{ form.get('pass')['errors']['minlength']['actualLength'] }} sinvoldur.
+      </span>
+    </span>
+  </div>
+  <div
+    class="form-group"
+    [ngClass]="{'has-error': form.get('name').invalid && form.get('name').touched}"
+  >
+    <label for="name">Adınız</label>
+    <input
+      type="text"
+      class="form-control underlined"
+      id="name"
+      placeholder="Adınız"
+      formControlName="name"
+    >
+    <span
+      class="form-help-text"
+      *ngIf="form.get('name').invalid && form.get('name').touched"
+    >
+      Ad yazılmayıb
+    </span>
+  </div>
+  <div
+    class="form-group"
+    [ngClass]="{'has-error': form.get('agree').invalid && form.get('agree').touched}"
+  >
+    <label for="agree">
+      <input
+        class="checkbox"
+        id="agree"
+        type="checkbox"
+        formControlName="agree"
+      >
+      <span>Qaydalarla razıyam</span>
+    </label>
+  </div>
+  <div class="form-group">
+    <button
+      type="submit"
+      class="btn btn-block btn-primary"
+      [disabled]="form.invalid"
+    >
+      Üzv ol
+    </button>
+  </div>
+  <div class="form-group">
+    <p class="text-muted text-xs-center">
+      Artıq üzv olmusunuz?
+      <a [routerLink]="'/login'">
+        Sistemə daxil olun!
+      </a>
+    </p>
+  </div>
+</form>
