@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class BaseApi {
-  private baseUrl = 'https://185.243.131.238:3000/';
+  private baseUrl = 'http://185.243.131.238:3000/';
 
   constructor(public http: Http) {}
 
